@@ -14,7 +14,7 @@ def tele(message):
     bots.send_message(text=str(message), chat_id=1217566905)
 
 
-file=open('./课表.html',encoding="utf-8")
+file=open('/root/table/课表.html',encoding="utf-8")
 ClassTab=file.read()
 soup=BeautifulSoup(ClassTab, "html.parser")
 localtime = time.localtime(time.time())
