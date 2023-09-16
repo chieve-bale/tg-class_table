@@ -13,10 +13,10 @@ def tele(message):
     bots=telegram.Bot("5329391020:AAH8dHkIRpwPxxhSfCiGWoCikpMkaW33EI8")
     bots.send_message(text=str(message), chat_id=1217566905)
 
-
 file=open('/root/table/课表.html',encoding="utf-8")
 ClassTab=file.read()
 soup=BeautifulSoup(ClassTab, "html.parser")
+file.close()
 localtime = time.localtime(time.time())
 start_time=time.strptime('2023 8 28','%Y %m %d')
 jie_ci=[]
@@ -30,8 +30,8 @@ def auto(t,*info1):
             if seed2 == info1[0][1] :
                 for m in i['info']:
                     if (int(time.strftime('%W',localtime))-int(time.strftime('%W',start_time))+1) == m:
-                        print(i['name']+'\n'+i['site']+'\n'+'星期'+str(i['time']//1000)+'第'+str(i['time']%1000)+'节课'+'\n'+i['teacher'])
-                        return i['name']+'\n'+i['site']+'\n'+'星期'+str(i['time']//1000)+'第'+str(i['time']%1000)+'节课'+'\n'+i['teacher']
+                        print(i['name']+'\n'+i['site'][7:]+'\n'+'周'+str(i['time']//1000)+'第'+str(i['time']%1000)+'节'+'\n'+i['teacher'][1:]
+                        return i['name']+'\n'+i['site'][7:]+'\n'+'周'+str(i['time']//1000)+'第'+str(i['time']%1000)+'节'+'\n'+i['teacher'][1:]
 def hand(t,*info1):
     txt=''
     for i in t:
@@ -41,8 +41,8 @@ def hand(t,*info1):
             if seed2 == info1[0][1] :
                 for m in i['info']:
                     if info1[0][2] == m:
-                        print(i['name']+'\n'+i['site']+'\n'+'星期'+str(i['time']//1000)+'第'+str(i['time']%1000)+'节课'+'\n'+i['teacher'])
-                        txt=txt+'\n'+i['name']+'\n'+i['site']+'\n'+'星期'+str(i['time']//1000)+'第'+str(i['time']%1000)+'节课'+'\n'+i['teacher']
+                        print(i['name']+'\n'+i['site'][7:]+'\n'+'周'+str(i['time']//1000)+'第'+str(i['time']%1000)+'节'+'\n'+i['teacher'][1:])
+                        txt=txt+'\n'+i['name']+'\n'+i['site'][7:]+'\n'+'周'+str(i['time']//1000)+'第'+str(i['time']%1000)+'节'+'\n'+i['teacher'][1:]
     return txt
 
 ##name=课程名称
@@ -119,5 +119,3 @@ if len(jie_ci)==1:
 ##while True:
 ##    schedule.run_pending()
 ##    time.sleep(1)
-
-file.close()
