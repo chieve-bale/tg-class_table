@@ -17,12 +17,12 @@ file=open('/root/table/课表.html',encoding="utf-8")
 ClassTab=file.read()
 soup=BeautifulSoup(ClassTab, "html.parser")
 file.close()
-localtime = time.localtime(time.time())
-start_time=time.strptime('2023 8 28','%Y %m %d')
 jie_ci=[]
 jie_ci=jie_ci+list(map(int,sys.argv[1:len(sys.argv)]))
 
 def auto(t,*info1):
+    localtime = time.localtime(time.time())
+    start_time=time.strptime('2023 8 28','%Y %m %d')
     for i in t:
         seed1=i['time']//1000 #课程星期数
         seed2=i['time']%1000  #课程节数
