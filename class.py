@@ -30,7 +30,7 @@ def auto(t,*info1):
             if seed2 == info1[0][1] :
                 for m in i['info']:
                     if (int(time.strftime('%W',localtime))-int(time.strftime('%W',start_time))+1) == m:
-                        print(i['name']+'\n'+i['site'][7:]+'\n'+'周'+str(i['time']//1000)+'第'+str(i['time']%1000)+'节'+'\n'+i['teacher'][1:]
+                        print(i['name']+'\n'+i['site'][7:]+'\n'+'周'+str(i['time']//1000)+'第'+str(i['time']%1000)+'节'+'\n'+i['teacher'][1:])
                         return i['name']+'\n'+i['site'][7:]+'\n'+'周'+str(i['time']//1000)+'第'+str(i['time']%1000)+'节'+'\n'+i['teacher'][1:]
 def hand(t,*info1):
     txt=''
