@@ -2,16 +2,15 @@
 # -*- coding: utf-8 -*-
 from bs4 import BeautifulSoup
 import time
-import schedule
+#import schedule
 import re
-import telegram
+from telegram import Bot
 import sys
 
 def tele(message):
     if message=='' :
         message='空值'
-    bots=telegram.Bot("5329391020:AAH8dHkIRpwPxxhSfCiGWoCikpMkaW33EI8")
-    bots.send_message(text=str(message), chat_id=1217566905)
+    Bot("5329391020:AAH8dHkIRpwPxxhSfCiGWoCikpMkaW33EI8").send_message(text=str(message), chat_id=1217566905)
 
 file=open('/root/table/课表.html',encoding="utf-8")
 ClassTab=file.read()
