@@ -10,7 +10,7 @@ import sys
 def tele(message):
     if message=='' :
         message='空值'
-    Bot("5329391020:AAH8dHkIRpwPxxhSfCiGWoCikpMkaW33EI8").send_message(text=str(message), chat_id=1217566905)
+    Bot("BOT_TOKEN").send_message(text=str(message), chat_id=1217566905)
 
 file=open('/root/table/课表.html',encoding="utf-8")
 ClassTab=file.read()
