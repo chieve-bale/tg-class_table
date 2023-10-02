@@ -12,7 +12,7 @@ def tele(message):
         message='空值'
     Bot("BOT_TOKEN").send_message(text=str(message), chat_id=1217566905)
 
-file=open('/root/table/课表.html',encoding="utf-8")
+file=open('./class.html',encoding="utf-8")
 ClassTab=file.read()
 soup=BeautifulSoup(ClassTab, "html.parser")
 file.close()
